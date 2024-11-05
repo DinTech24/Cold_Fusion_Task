@@ -11,15 +11,15 @@
                 <cfset lastFriday = dateformat(i, "dd/mm/yyyy")>
             </cfif>
         </cfloop>
-        <cfset struct["Today's date"] = tdate> 
-        <cfset struct["Current Month in numeric"] = cmonth>
-        <cfset struct["current month in word"] = cmonthWor>
-        <cfset struct["Last Friday"] = lastFriday>
-        <cfset struct["Last day of month"] = lastFriday>
+        <cfset struct1["Today's date"] = tdate> 
+        <cfset struct1["Current Month in numeric"] = cmonth>
+        <cfset struct1["Current month in word"] = cmonthWor>
+        <cfset struct1["Last Friday"] = lastFriday>
+        <cfset struct1["Last day of month"] = lastFriday>
         <cfreturn struct1>
     </cffunction>
 
-<!---     <cffunction  name="printAllDates">
+    <cffunction  name="printAllDates">
         <cfset obje = { "monday":"green",
                         "tuesday":"orange",
                         "wednesday":"yellow",
@@ -33,9 +33,8 @@
         <cfset alldates = Now() - 5>
         <cfloop from="#alldates#" to="#yest#" index="i"> 
             <cfset dat = #dateformat(i, "dd-mm-yyyy-dddd")#>
-            <cfset struct2[dat] = >
+            <cfset struct2[dat] = obje[dateFormat(i,"dddd")]>
         </cfloop>
-        <cfdump var= "#struct2#"> 
         <cfreturn struct2>
-    </cffunction> --->
+    </cffunction>
 </cfcomponent>
