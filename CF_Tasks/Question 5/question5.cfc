@@ -1,32 +1,32 @@
 <cfcomponent>
-    <cfset arr1 = ArrayNew(1)>
-    <cffunction  name="findDates">
-    <cfargument  name="argu1" type="date">
-    <cfargument  name="argu2" type="date">
-    <cfset userdb = arguments.argu1>
-    <cfset motherdb = arguments.argu2 >
-    <cfset userage =dateDiff("yyyy", userdb,now())>
-    <cfset motherage =dateDiff("yyyy", motherdb,now())>
-    <cfset motherdm = DayOfYear(motherdb)>
-    <cfset dayToday = dayOfYear(now())>
-    <cfif motherdm GT dayToday>
-        <cfset motherdays = motherdm - dayToday>
+    <cfset local.arr1  =  ArrayNew(1)>
+    <cffunction  name = "findDates">
+    <cfargument  name = "argu1" type = "date">
+    <cfargument  name = "argu2" type = "date">
+    <cfset local.userdb  =  arguments.argu1>
+    <cfset local.motherdb  =  arguments.argu2 >
+    <cfset local.userage  = dateDiff("yyyy", local.userdb,now())>
+    <cfset local.motherage  = dateDiff("yyyy", local.motherdb,now())>
+    <cfset local.motherdm  =  DayOfYear(local.motherdb)>
+    <cfset local.dayToday  =  dayOfYear(now())>
+    <cfif local.motherdm GT local.dayToday>
+        <cfset local.motherdays  =  local.motherdm - local.dayToday>
         <cfelse>
-            <cfset motherdays =  365 + (motherdm - dayToday)>
+            <cfset local.motherdays  =   365 + (local.motherdm - local.dayToday)>
     </cfif>
-    <cfset userdm = DayOfYear(userdb)>
-    <cfset dayToday = dayOfYear(now())>
-    <cfif userdm GT dayToday>
-            <cfset userdays = userdm - dayToday>
+    <cfset local.userdm  =  DayOfYear(local.userdb)>
+    <cfset local.dayToday  =  dayOfYear(now())>
+    <cfif local.userdm GT dayToday>
+            <cfset local.userdays  =  local.userdm - local.dayToday>
         <cfelse>
-            <cfset userdays = 365 + (userdm - dayToday)>
+            <cfset local.userdays  =  365 + (local.userdm - local.dayToday)>
     </cfif>
-    <cfset userday = dateDiff("d",now(),userdb)>
-    <cfset motherday = dateDiff("d",now(),motherdb)> 
-    <cfset arr1[1] = userage>
-    <cfset arr1[2] = motherage-userage>
-    <cfset arr1[3] = userdays>
-    <cfset arr1[4] = motherdays>
-    <cfreturn arr1>
+    <cfset local.userday  =  dateDiff("d",now(),local.userdb)>
+    <cfset local.motherday  =  dateDiff("d",now(),local.motherdb)> 
+    <cfset local.arr1[1]  =  local.userage>
+    <cfset local.arr1[2]  =  local.motherage-local.userage>
+    <cfset local.arr1[3]  =  local.userdays>
+    <cfset local.rr1[4]  =  local.motherdays>
+    <cfreturn local.arr1>
     </cffunction>
 </cfcomponent>

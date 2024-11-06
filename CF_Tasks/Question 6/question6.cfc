@@ -1,11 +1,11 @@
 <cfcomponent>
-    <cffunction  name="dumpStr">
-        <cfargument  name="arg1">
-        <cfargument  name="arg2">
-        <cfset key = arguments.arg1>
-        <cfset val = arguments.arg2>
-        <cfset struct =structNew("Ordered")>
-        <cfset  struct[key] = val>
-        <cfdump  var="#struct#">
+    <cffunction  name = "dumpStr" returnType = "struct">
+        <cfargument  name = "arg1">
+        <cfargument  name = "arg2">
+        <cfset local.key  =  arguments.arg1>
+        <cfset local.val  =  arguments.arg2>
+        <cfset local.struct  = structNew("Ordered")>
+        <cfset  local.struct[local.key]  =  local.val>
+        <cfreturn local.struct>
     </cffunction>
 </cfcomponent>
