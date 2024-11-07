@@ -16,12 +16,12 @@
                 </div>
             </form>
             <cfif structKeyExists(form,"inputVal") AND len(form.inputVal) GT 0>
-                <cfset obje  =  new question17()>
-                <cfset result  =  obje.numUpto(form.inputVal)>
+                <cfset local.obje  =  new question17()>
+                <cfset local.result  =  obje.numUpto(form.inputVal)>
             </cfif>
             <div class = "w-25 mx-auto border border-dark text-light mt-5 rounded p-4">
-                <cfloop collection = "#result#" item = "i">
-                    <div class = "text-center fw-bold" style = "color:#result[i]#;">#i#</div><br>
+                <cfloop collection = "#local.result#" item = "i">
+                    <div class = "text-center fw-bold" style = "color:#local.result[i]#;">#i#</div><br>
                 </cfloop>
             </div>
             <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity = "sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin = "anonymous"></script>

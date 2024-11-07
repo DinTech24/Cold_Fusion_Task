@@ -6,7 +6,7 @@
         <cfset local.val  =  arguments.arg2>
         <cfif structKeyExists(session,"struct")>
             <cfelse>
-                <cfset local.struct  = structNew("Ordered")>
+                <cfset session.struct  = structNew("Ordered")>
         </cfif>
         <cfset  session.struct[local.key]  =  local.val>
         <cfreturn session.struct>

@@ -18,10 +18,10 @@
                 </div>
             </form>
             <cfif structKeyExists(form,"captcha") AND structKeyExists(form,"email")>
-                <cfset obj  =  new question20()>
-                <cfset result  =  obj.validateCaptcha(form.captcha,form.email,capText)>
+                <cfset local.obj  =  new question20()>
+                <cfset local.result  =  local.obj.validateCaptcha(form.captcha,form.email,capText)>
                 <div class = "w-25 mx-auto bg-dark -light mt-5 rounded-pill p-4">
-                    <div class = "text-center text-light">#result#</div>
+                    <div class = "text-center text-light">#local.result#</div>
                 </div> 
             </cfif>
         </body>

@@ -14,9 +14,9 @@
                     <input type = "submit" value = "Submit" class = "btn btn-primary my-auto mt-3">
                 </div>
             </form>
-            <cfset obj  =  new question19()>
-            <cfset result  =  obj.sendCookie()>
-            #result#
+            <cfset local.obj  =  new question19()>
+            <cfset local.result  =  local.obj.sendCookie()>
+            #local.result#
         </body>
     </html>
 </cfoutput>

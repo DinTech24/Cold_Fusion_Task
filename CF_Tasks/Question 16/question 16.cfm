@@ -1,5 +1,5 @@
 <cfoutput>
-    <cfset obj  = new question16()>
-    <cfset result  =  obj.printPat()>
-    #result#
+    <cfset local.obj  = new question16()>
+    <cfset local.result  =  obj.printPat()>
+    #local.result#
 </cfoutput>

@@ -1,6 +1,6 @@
 <cfcomponent>
     <cffunction  name = "sendCookie" returntype = "numeric">
-       <cfif not structKeyExists(cookie,"VisitsCounter")>
+       <cfif NOT structKeyExists(cookie,"VisitsCounter")>
             <cfcookie  name = "VisitsCounter">
             <cfset cookie.VisitsCounter  =  0>
        </cfif> 
