@@ -4,7 +4,7 @@
     <cfset local.value=arguments.number>
         <cfif local.value EQ 5>
             <cfset result="Very Good">
-        <cfelseif value EQ 4>
+        <cfelseif local.value EQ 4>
             <cfset result="Good">
         <cfelseif local.value EQ 3>
             <cfset result="Fair">
