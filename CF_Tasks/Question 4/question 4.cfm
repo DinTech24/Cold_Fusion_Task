@@ -1,3 +1,4 @@
+<cfoutput>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-    <body>
-        <form action="" method="POST">
-            <div class="text-center mt-3 w-100">
-                <input type="text" name="inputval" class="w-75 mx-auto  mx-auto form-control border border-primary">
-                <input type="submit" value="Submit" class="btn btn-primary my-auto mt-3">
-            </div>
-        </form>
+<body>
+    <cfset obj =  new question4()>
+    <cfset result = obj.printDates()>
+    <div class="w-25 mx-auto bg-dark text-light mt-5 rounded-pill p-4">
+        <div class="text-center d-grid">
+            <span>Today's Date = #result#</span>
+        </div>
+    </div> 
 
-    </body>
+</body>
 </html>
+</cfoutput>
+
