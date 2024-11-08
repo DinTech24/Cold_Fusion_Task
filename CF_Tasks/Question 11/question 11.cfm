@@ -1,17 +1,17 @@
 <cfoutput>
-    <cfset result  =  multiply(1,2)>
-    <cfdump  var = "#res#">
-    <cfset result  =  multiply(1,2,3)>
-    <cfdump  var = "#res#">
-    <cfset result  =  multiply(1,2,3,4)>
-    <cfdump  var = "#res#">
+    <cfset local.result  =  multiply(1,2)>
+    <cfdump  var = "#local.res#">
+    <cfset local.result  =  multiply(1,2,3)>
+    <cfdump  var = "#local.res#">
+    <cfset local.result  =  multiply(1,2,3,4)>
+    <cfdump  var = "#local.res#">
 </cfoutput>
 
 
 <cffunction  name = "multiply">
-    <cfset len  =  arrayLen(arguments)>
-    <cfset res  =  1>
+    <cfset local.len  =  arrayLen(arguments)>
+    <cfset local.res  =  1>
     <cfloop array = "#arguments#" index = "i">
-        <cfset res  =  res * arguments[i]>
+        <cfset local.res  =  local.res * arguments[i]>
     </cfloop>
 </cffunction>

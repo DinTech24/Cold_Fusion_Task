@@ -1,14 +1,14 @@
 <cfcomponent>
 <cffunction  name = "printPat" returnType = "string">
-    <cfset patt  = " ">
+    <cfset local.patt  = " ">
     <cfloop index = "i" from = "1" to = "3">
-        <cfset patt  =  patt & i>
+        <cfset local.patt  =  local.patt & i>
         <cfloop index = "j" from = "1" to = "2">
-                <cfset patt  =  patt & " ">
-                <cfset patt  =  patt & ( i + (3 * j))>
+                <cfset local.patt  =  local.patt & " ">
+                <cfset local.patt  =  local.patt & ( i + (3 * j))>
         </cfloop>
-         <cfset patt  =  patt & "<br>">
+         <cfset local.patt  =  local.patt & "<br>">
     </cfloop>
-    <cfreturn patt>
+    <cfreturn local.patt>
 </cffunction>
 </cfcomponent>

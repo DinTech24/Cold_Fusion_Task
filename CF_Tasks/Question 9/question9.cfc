@@ -1,5 +1,5 @@
 <cfcomponent>
-    <cffunction  name = "dumpStr" retrunType = "">
+    <cffunction  name = "dumpStr" retrunType = "any">
         <cfargument  name = "arg1">
         <cfargument  name = "arg2">
         <cfset local.key  =  arguments.arg1>
