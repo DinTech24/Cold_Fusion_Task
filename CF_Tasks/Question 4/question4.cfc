@@ -6,7 +6,7 @@
         <cfset local.fromDate  =  Now() - 7>  
         <cfset local.toDate  =  Now()>
         <cfset local.struct1  =  structNew()>
-        <cfloop from = "#fromDate#" to = "#toDate#" index = "i"> 
+        <cfloop from = "#fromDate#" to = "#toDate#" index = "i">
             <cfif dateformat(i, "ddd") EQ "fri">
                 <cfset local.lastFriday  =  dateformat(i, "dd/mm/yyyy")>
             </cfif>
@@ -31,7 +31,7 @@
         <cfset local.struct2  =  structNew()>
         <cfset local.yest  =  Now() - 1 >
         <cfset local.alldates  =  Now() - 5>
-        <cfloop from = "#alldates#" to = "#yest#" index = "i"> 
+        <cfloop from = "#alldates#" to = "#yest#" index = "i">
             <cfset local.dat  =  #dateformat(i, "dd-mm-yyyy-dddd")#>
             <cfset local.struct2[dat]  =  obje[dateFormat(i,"dddd")]>
         </cfloop>
