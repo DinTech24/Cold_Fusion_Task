@@ -23,6 +23,5 @@
                                  #local.totalSalary#,
                                 '#arguments.resumeFile#');
         </cfquery>
-        <cfdump  var="query">
     </cffunction>
 </cfcomponent>
