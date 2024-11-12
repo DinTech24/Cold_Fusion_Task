@@ -1,0 +1,62 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+}
+
+.userData{
+    background-color: #ffd2c7;
+}
+
+.adminLogin{
+    background-color: #d5fce6;
+}
+
+.helloUser{
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+}
+
+.signupLink{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.warning{
+    color: crimson;
+    font-weight: 600;
+}
+
+.userHead{
+    background-color: #5e0000;
+}
+
+.userDataHead{
+    border: 2px double  black;
+
+}
+
+.pageData{
+    background-color: #ffd8d8;
+    border-bottom: 1px solid grey;
+}
+
+.pageContainer{
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
+    height: 70vh;
+}
+
+.pagedesc{
+    font-size: small;
+}
+
+.addbackGround{
+    background-color: #cfffc9;
+}

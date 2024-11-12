@@ -16,7 +16,7 @@
                     </div>
                 </form>
                 <cfif structKeyExists(form,"word")>
-                    <cfset local.obj  =  new question13()>
+                    <cfset local.obj  =  new Component.question13()>
                     <cfset local.result  =  local.obj.findWord(form.word)>
                     <div class = "w-25 mx-auto bg-dark text-light mt-5 rounded-pill p-4">
                         <div class = "text-center">#local.result#</div>

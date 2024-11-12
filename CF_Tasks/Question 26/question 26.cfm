@@ -15,7 +15,7 @@
                     </div>
                 </form>
                 <cfif structKeyExists(form,"submitButton")>
-                    <cfset local.obj  =  new question26()>
+                    <cfset local.obj  =  new Component.question26()>
                     <cfset local.result  =  local.obj.splitString("#form.dataFile#")>
                     <div class = "w-25 mx-auto mt-5 rounded-pill p-4">
                         <div class = "text-center"><cfdump var="#local.result#"></div>

@@ -17,7 +17,7 @@
                     </div>
                 </form>
                 <cfif structKeyExists(form,"userdob") AND structKeyExists(form,"motherdob")>
-                    <cfset local.obj  =  new question5()>
+                    <cfset local.obj  =  new Component.question5()>
                     <cfset local.result  =  obj.findDates(form.userdob,form.motherdob)>
                     <div class = "w-25 mx-auto bg-dark text-light mt-5 rounded-pill p-4">
                         <div class = "text-center d-grid">

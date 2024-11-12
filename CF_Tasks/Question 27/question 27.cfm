@@ -18,7 +18,7 @@
                     </div>
                 </form>
                 <cfif structKeyExists(form,"userName") AND structKeyExists(form,"password")>
-                    <cfset local.obj  =  new question27()>
+                    <cfset local.obj  =  new Component.question27()>
                     <cfset local.result  =  local.obj.login(form.userName,form.password)>
                     <cfif local.result EQ false>
                         <div class = "w-25 mx-auto text-danger fw-bold mt-2 rounded-pill p-4">

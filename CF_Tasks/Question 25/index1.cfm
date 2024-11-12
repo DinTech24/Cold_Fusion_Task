@@ -15,7 +15,7 @@
                     </div>
                 </form>
                 <cfif structKeyExists(form,"submitButton")>
-                    <cfset local.obj  =  new tagCloud()>
+                    <cfset local.obj  =  new Component.tagCloud()>
                     <cfset local.result  =  local.obj.splitString(form.text)>
                     <div class = "w-25 mx-auto mt-5 rounded-pill p-4">
                         <div class = "text-center"><cfdump var="#local.result#"></div>

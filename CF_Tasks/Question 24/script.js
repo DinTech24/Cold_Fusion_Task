@@ -2,6 +2,7 @@ function validateMail(){
     var firstname = document.getElementById("firstName").value;
     var email = document.getElementById("emailId").value;
     var button = document.getElementById("buttonDisable");
+
     if((firstname == "") || (email == "")){
         document.getElementById("inner").innerHTML="Enter all details"
     }
@@ -13,6 +14,10 @@ function validateMail(){
             success: function(disable){
                 if(!disable){
                     button.disabled = false;
+                }
+                else{
+                    document.getElementById("inner").innerHTML = "Mail already there";
+                    button.disabled = true;
                 }
             }
         });

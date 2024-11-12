@@ -17,7 +17,7 @@
                     </div>
                 </form> 
                 <cfif structKeyExists(form,"inputVal") AND len(form.inputVal) GT 0>
-                    <cfset obje = new question2()>
+                    <cfset obje = new Component.question2()>
                     <cfset local.result = obje.switchCase(form.inputVal)>
                     <div class="w-25 mx-auto bg-dark text-light mt-5 rounded-pill p-4">
                         <div class="text-center">#local.result#</div>

@@ -17,7 +17,7 @@
                     </div>
                 </form>
                 <cfif structKeyExists(form,"key") AND structKeyExists(form,"val")>
-                    <cfset local.obj  =  new question7()>
+                    <cfset local.obj  =  new Component.question7()>
                     <cfset local.result  =  local.obj.dumpStr(form.key,form.val)>
                     <div class = "w-25 mx-auto bg-dark text-light mt-5 rounded-pill p-4">
                         <div class = "text-center"><cfdump  var = "#local.result#"></div>

@@ -134,7 +134,7 @@
         
 
         <cfif structKeyExists(form, "validateButton")>
-            <cfset local.object = new question23()>
+            <cfset local.object = new Component.question23()>
             <cfset local.result = local.object.insertToDatabase(
                 form.selectPosition,form.relocateData,form.joinDate,form.portfolio,
                 form.resumeFile,form.salary,form.salaryCent,form.userName

@@ -16,7 +16,7 @@
                     </div>
                 </form>
                 <cfif structKeyExists(form,"inputVal") AND len(form.inputVal) GT 0>
-                    <cfset local.obje  =  new question17()>
+                    <cfset local.obje  =  new Component.question17()>
                     <cfset local.result  =  obje.numUpto(form.inputVal)>
                 </cfif>
                 <div class = "w-25 mx-auto border border-dark text-light mt-5 rounded p-4">

@@ -20,7 +20,7 @@
                 </form>
 
                 <cfif structKeyExists(form, "formButton")>
-                    <cfset local.obj  =  new question21()>
+                    <cfset local.obj  =  new Component.question21()>
                     <cfset local.result  =  local.obj.sendWish(form.personName,form.personMail,form.birthdayWish,form.imageFile)>
                 </cfif>
             </cfoutput>
