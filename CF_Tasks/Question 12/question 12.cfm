@@ -10,7 +10,7 @@
         <body>
             <form action="" method="POST">
                 <div class="mt-3 text-center">
-                    <input name="inputVal" placeholder="Enter the number" type="number" class="w-75 mx-auto form-control border border-primary">
+                    <input required name="inputVal" placeholder="Enter the number" type="number" class="w-75 mx-auto form-control border border-primary">
                     <input type="submit" value="Submit" class="btn btn-primary  mt-3">
                 </div>
             </form> 

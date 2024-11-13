@@ -26,7 +26,7 @@
     <cfset local.arr1[1]  =  local.userage>
     <cfset local.arr1[2]  =  local.motherage-local.userage>
     <cfset local.arr1[3]  =  local.userdays>
-    <cfset local.rr1[4]  =  local.motherdays>
+    <cfset local.arr1[4]  =  local.motherdays>
     <cfreturn local.arr1>
     </cffunction>
 </cfcomponent>

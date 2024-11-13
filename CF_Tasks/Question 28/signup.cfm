@@ -1,4 +1,3 @@
-<cfapplication name = "applicationName" sessionmanagement = "Yes">
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,9 +26,9 @@
                                 <div class="warning" id="passwordrewarn"></div>
                                 <select id="roleSelection" name="roleSelection" class="form-control border border-success mt-3" id="">
                                     <option selected value="Select your role" disabled>Select your role</option>
-                                    <option value="Editor">Editor</option>
-                                    <option value="Admin">Admin</option>
-                                    <option value="User">User</option>
+                                    <option value="2">Editor</option>
+                                    <option value="3">Admin</option>
+                                    <option value="1">User</option>
                                 </select>
                                 <div class="warning" id="rolewarn"></div>
                                 <button  class="btn btn-success w-50 mt-3"  type="submit" onclick="validateSignUp()" name="validateSign">Sign Up</button>

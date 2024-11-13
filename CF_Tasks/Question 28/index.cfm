@@ -1,4 +1,3 @@
-<cfapplication name = "applicationName" sessionmanagement = "Yes">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +21,11 @@
                         <div class="warning" id="userwarn"></div>
                             <input id="password" name="password" placeholder="Enter a passsword" type="password" class="form-control border border-success mt-3">
                             <div class="warning" id="passwordwarn"></div>
-                            <select id="roleSelection" name="roleSelection" class="form-control border border-success mt-3" id="">
+                            <select id="roleSelection" name="roleSelection" class="form-control border border-success mt-3">
                                 <option selected value="Select your role" disabled>Select your role</option>
-                                <option value="Editor">Editor</option>
-                                <option value="Admin">Admin</option>
-                                <option value="User">User</option>
+                                <option value="2">Editor</option>
+                                <option value="3">Admin</option>
+                                <option value="1">User</option>
                             </select>
                         <div class="warning" id="rolewarn"></div>
                         <button class="btn btn-success w-50 mt-3" name="validateLog" type="submit" onclick="validateLogin()">Login</button>

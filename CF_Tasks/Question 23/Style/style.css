@@ -1,0 +1,63 @@
+*{
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+}
+
+body{
+    background-color: #669900;
+}
+.header{
+    background-color: #99CC00;
+    height: 80px;
+}
+.warning{
+    color: crimson;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.mainHead{
+    font-size: 24px;
+    margin-bottom: 5px;
+    padding-top: 20px;
+}
+
+.infinityBox{
+    font-size: 13px;
+}
+
+.formHead{
+    border-bottom: 1px dotted #888686 ;
+}
+
+.dollarClass{
+    width: 110px;
+}
+
+.centClass{
+    width: 30px;
+
+}
+
+.firstName{
+    width: 100px;
+}
+
+.lastName{
+    width: 120px;
+}
+
+.phonenumber{
+    width: 35px;
+}
+
+.phoneLast{
+    width: 55px;
+}
+
+.backgroundChange{
+    background-color:#ff8383
+}
+
+.backgroundChange *{
+    background-color: #ff8383;
+}

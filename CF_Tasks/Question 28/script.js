@@ -75,3 +75,22 @@ function validateLogin(){
     }
 }
 
+function logOut(){
+    if(confirm("Confirm Logout?"))
+    {
+        $.ajax({
+            type:"POST",
+            url:"Component/question28.cfc?method=logOutPage",
+            success:function(result){
+                if(result){
+                    return true;
+                }
+            }
+        })
+    }
+    else{
+        event.preventDefault()
+    }
+}
+
+

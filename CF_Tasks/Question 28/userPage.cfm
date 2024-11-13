@@ -1,4 +1,3 @@
-<cfapplication name = "applicationName" sessionmanagement = "Yes">
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +14,7 @@
                 </cfif>
                 <form method="POST">
                     <div class=" d-flex justify-content-between mb-3 py-3 userHead">
-                        <div class="helloUser ms-2">Welcome User , username</div>
+                        <div class="helloUser ms-2">Welcome User, #session.username#</div>
                         <button class="btn btn-danger me-3" name="userLogout">Logout</button>
                     </div>
                 </form>
