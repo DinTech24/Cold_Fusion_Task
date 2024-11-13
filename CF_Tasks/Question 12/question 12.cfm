@@ -15,7 +15,7 @@
                 </div>
             </form> 
             <cfif structKeyExists(form,"inputVal") AND len(form.inputVal) GT 0>
-                <cfset local.obje = new question12()>
+                <cfset local.obje = new Component.question12()>
                 <cfset local.result = local.obje.retrieveData(form.inputVal)>
                 <div class="w-25 mx-auto bg-dark text-center text-light mt-5 rounded p-4">
                     <table class="border border-light w-100 text-center">

@@ -1,17 +1,13 @@
 <cfcomponent>
-    <cffunction  name="verifyEmail">
-        <cfargument  name="firstName">
-        <cfargument  name="email">
+    <cffunction  name="verifyEmail" access="remote" returnType="any">
+        <cfargument  name="email" type="string">
         <cfquery datasource="myData" name="query">
-            select Email_id from UserCred where Email_id='#arguments.email#';
+            select count('Email_id') as count from UserCred where Email_id='#arguments.email#';
         </cfquery>
-        <cfif query.Email_id EQ "">
-            <cfreturn false>
-            <cfelse>
-                <cfreturn true>
+        <cfif query.count>
+            <cfreturn true>
         </cfif>
     </cffunction>
-
     <cffunction  name="detailsEntry">
         <cfargument  name="firstName">
         <cfargument  name="email">

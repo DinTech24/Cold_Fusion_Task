@@ -1,6 +1,5 @@
 <cfapplication name = "applicationName" sessionmanagement = "Yes">
-<cfoutput>
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang = "en">
     <head>
         <meta charset = "UTF-8">
@@ -9,19 +8,20 @@
         <link href="../Bootstrap/bootstrap.min.css" rel="stylesheet" >
     </head>
         <body>
-            <cfif NOT structKeyExists(session, "userName")>
-                <cflocation  url="question 27.cfm">
-            </cfif>
-            <form action = "" method = "POST"> 
-                <div class = "text-center mt-3 w-75 mt-5 p-5 mx-auto border border-dark">
-                    <h2 class="mb-4">WELCOME USER</h2> 
-                    <button class="btn btn-danger" name="logoutButton" type="submit">Logout</button>
-                </div>
-                <cfif structKeyExists(form, "logoutButton")>
-                    <cfset sessionInvalidate()>
+            <cfoutput>
+                <cfif NOT structKeyExists(session, "userName")>
                     <cflocation  url="question 27.cfm">
                 </cfif>
-            </form>
+                <form action = "" method = "POST"> 
+                    <div class = "text-center mt-3 w-75 mt-5 p-5 mx-auto border border-dark">
+                        <h2 class="mb-4">WELCOME USER</h2> 
+                        <button class="btn btn-danger" name="logoutButton" type="submit">Logout</button>
+                    </div>
+                    <cfif structKeyExists(form, "logoutButton")>
+                        <cfset sessionInvalidate()>
+                        <cflocation  url="question 27.cfm">
+                    </cfif>
+                </form>
+            </cfoutput>
         </body>
     </html>
-</cfoutput>
