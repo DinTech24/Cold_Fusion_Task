@@ -1,4 +1,3 @@
-<cfapplication name = "applicationName" sessionmanagement = "Yes">
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,15 +9,14 @@
     </head>
         <body>
             <cfoutput>
-                <cfif NOT structKeyExists(session, "username")>
+                <cfif NOT structKeyExists(session,"username")>
                     <cflocation  url="./index.cfm">
                 </cfif>
                 <form method="POST">
                     <div class=" d-flex justify-content-between mb-3 py-3 userHead">
-                        <div class="helloUser ms-2">Welcome User , username</div>
-                        <button class="btn btn-danger me-3" name="userLogout">Logout</button>
+                        <div class="helloUser ms-2">Welcome #session.username#</div>
+                        <button class="btn btn-danger me-3" onclick="return logOut()" type="submit" name="userLogout">Logout</button>
                     </div>
-
                     <div class="d-flex me-3 justify-content-between">
                         <div class="ms-3 fs-2 mb-3">PAGES LIST</div>
                         <div><a href="./addPage.cfm" class="btn btn-primary">&plus; Add Page</a></div>
@@ -46,6 +44,9 @@
                     </div>
                 </form>
                 </div>
+                <cfif structKeyExists(form,"userLogout")>
+                    <cflocation  url="./index.cfm">
+                </cfif>
                 <cfif structKeyExists(form, "updatePage")>
                     <cfset local.object = new Component.question28()>
                     <cflocation  url="./editPage.cfm">
@@ -54,14 +55,11 @@
                     <cfset local.object = new Component.question28()>
                     <cfset local.result = local.object.deletePage(form.deletePage)>
                 </cfif>
-                <cfif structKeyExists(form, "userLogout")>
-                    <cfset sessionInvalidate()>
-                    <cflocation  url="./index.cfm">
-                </cfif>
             </cfoutput>
             <script src="./script.js"></script>
           	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
             <script src="./accordion.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />

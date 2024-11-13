@@ -1,5 +1,5 @@
 <cffunction name="splitString" returnType="struct">
-    <cfargument name="file">
+    <cfargument name="file"  type="string">
     <cffile action="read" file="#arguments.file#" variable="text">
     <cfset local.count = 0>
     <cfset local.struct = structNew()>

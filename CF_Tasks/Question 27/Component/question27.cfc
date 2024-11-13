@@ -1,19 +1,20 @@
 <cfcomponent>
-    <cffunction  name="login">
-        <cfargument  name="argument1">
-        <cfargument  name="argument2">
+    <cffunction  name="login" returnType="boolean">
+        <cfargument  name="userName" type="string">
+        <cfargument  name="password" type="string">
         <cfif NOT structKeyExists(session, userName)>
-            <cfset session.userName = "username123">
-            <cfset session.password = "user@123">
+            <cfset session.userName = "#arguments.userName#">
+            <cfquery datasource="myData" name="query">
+                select count(username) as count from userData27 
+                where username = '#arguments.userName#' 
+                and password = '#arguments.password#';
+            </cfquery>
         </cfif>
-        <cfif arguments.argument1 EQ session.userName AND arguments.argument2 EQ session.password>
+        <cfif query.count EQ 1>
             <cfset flag = true>
             <cfelse>
                 <cfset flag = false>
         </cfif>
         <cfreturn flag>
-    </cffunction>
-
-    <cffunction  name="sessionout">
     </cffunction>
 </cfcomponent>

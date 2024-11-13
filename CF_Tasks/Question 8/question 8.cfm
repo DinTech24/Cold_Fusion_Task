@@ -11,8 +11,8 @@
             <cfoutput>
                 <form action = "" method = "POST">
                     <div class = "text-center mt-3 w-100">
-                        <input type = "text" name = "key" placeholder = "Enter the key" class = "w-75 mx-auto  mx-auto form-control border border-primary">
-                        <input type = "text" name = "val" placeholder = "Enter it's value" class = "mt-3 w-75 mx-auto  mx-auto form-control border border-primary">
+                        <input required type = "text" name = "key" placeholder = "Enter the key" class = "w-75 mx-auto  mx-auto form-control border border-primary">
+                        <input required type = "text" name = "val" placeholder = "Enter it's value" class = "mt-3 w-75 mx-auto  mx-auto form-control border border-primary">
                         <input type = "submit" value = "Submit" class = "btn btn-primary my-auto mt-3">
                     </div>
                 </form>

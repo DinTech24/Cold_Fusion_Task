@@ -12,7 +12,7 @@
             <cfset local.result1 = local.obj.printDates()>
             <cfset local.object =  new Component.question4()>
             <cfset local.result2 = local.obj.printAllDates()>
-            <div class = "w-25 mx-auto bg-dark text-light mt-5 rounded-pill p-4">
+            <div class = "w-25 mx-auto  mt-5 border border-dark rounded p-4">
                 <div class = "text-center d-grid">
                     <cfloop collection = "#local.result1#" item = "i">
                         <span>#i# : #local.result1[i]#</span><br>

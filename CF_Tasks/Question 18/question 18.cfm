@@ -22,9 +22,12 @@
                             {id=2,name="Jibin",email="jibin@123.com"}, 
                             {id=3,name="Appus",email="appus@123.com"} 
                         ])>
+        <div class="d-flex justify-content-center mt-3">
+            <div class="text-center mx-auto">
+                <cfdump var="#myQuery#">
+            </div>
+        </div>
+
     </cfif>
-    <div class="text-center mx-auto">
-        <cfdump var="#myQuery#">
-    </div>
 </body>
 </html>
