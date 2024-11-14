@@ -76,13 +76,13 @@ function validateLogin(){
 }
 
 function logOut(){
-    if(confirm("Confirm Logout?"))
-    {
+    if(confirm("Confirm Logout?")){
         $.ajax({
             type:"POST",
             url:"Component/question28.cfc?method=logOutPage",
             success:function(result){
                 if(result){
+                    location.reload();
                     return true;
                 }
             }
@@ -93,4 +93,18 @@ function logOut(){
     }
 }
 
+function deletePage(pageid){
+    if(confirm("Are you sure to delete the page?")){
+        $.ajax({
+            type:"POST",
+            url:"Component/question28.cfc?method=deletePages",
+            data:{pageid:pageid.value},
+            success:function(result){
+                if(result){
+                    location.reload();
+                }
+            }
+        })
+    }
+}
 

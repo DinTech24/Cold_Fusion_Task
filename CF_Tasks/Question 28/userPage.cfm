@@ -12,10 +12,13 @@
                 <cfif NOT structKeyExists(session, "username")>
                     <cflocation  url="./index.cfm">
                 </cfif>
+                <cfif NOT session.role EQ "User">
+                    <cflocation  url="./index.cfm">
+                </cfif>
                 <form method="POST">
                     <div class=" d-flex justify-content-between mb-3 py-3 userHead">
                         <div class="helloUser ms-2">Welcome User, #session.username#</div>
-                        <button class="btn btn-danger me-3" name="userLogout">Logout</button>
+                        <button class="btn btn-danger me-3" onclick="return logOut()" type="button" name="userLogout">Logout</button>
                     </div>
                 </form>
                 <div class="ms-3 fs-2 mb-3">PAGES LIST</div>
@@ -23,12 +26,21 @@
                     <div id="accordion" class="accordion">
                         <cfif structKeyExists(session, 'username')>
                             <cfset local.obj = new Component.question28()>
-                            <cfset local.result = local.obj.displayPages()>
+                            <cfset local.result = local.obj.displayUserPages()>
                             <cfloop query="#local.result#">
-                                <h6 class="headSection">Page Id = #local.result.pageid#<i class="fa-solid fa-chevron-down fade1 fa-xs"></i></h6>
+                                <div class="headSection d-flex pe-2 justify-content-between">
+                                    <div>
+                                        <h6>
+                                            Page Id : #result.pageid#
+                                            <i class="fa-solid fa-chevron-down fade1 fa-xs"></i>
+                                        </h6> 
+                                    </div>                                       
+                                    <div>Page Created On :#result._createdOn#</div>
+                                    <div>Page Created By :#result._createdBy#</div>
+                                </div>
                                 <div class="pageData">
-                                    <div>#local.result.pagename#</div>
-                                    <p class="pagedesc">
+                                    <div class="ms-2">#local.result.pagename#</div>
+                                    <p class="pagedesc ms-2">
                                         #local.result.pagedesc#
                                     </p>
                                 </div>
@@ -40,7 +52,6 @@
                 </div>
                 <script src="./script.js"></script>
                 <cfif structKeyExists(form, "userLogout")>
-                    <cfset sessionInvalidate()>
                     <cflocation  url="./index.cfm">
                 </cfif>
             </cfoutput>

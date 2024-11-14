@@ -12,30 +12,42 @@
                 <cfif NOT structKeyExists(session,"username")>
                     <cflocation  url="./index.cfm">
                 </cfif>
+                <cfif session.role EQ "User">
+                    <cflocation  url="./index.cfm">
+                </cfif>
                 <form method="POST">
                     <div class=" d-flex justify-content-between mb-3 py-3 userHead">
                         <div class="helloUser ms-2">Welcome #session.username#</div>
-                        <button class="btn btn-danger me-3" onclick="return logOut()" type="submit" name="userLogout">Logout</button>
+                        <button class="btn me-3 userLogout" onclick="return logOut()" type="button" name="userLogout">Logout</button>
                     </div>
                     <div class="d-flex me-3 justify-content-between">
                         <div class="ms-3 fs-2 mb-3">PAGES LIST</div>
-                        <div><a href="./addPage.cfm" class="btn btn-primary">&plus; Add Page</a></div>
+                        <div><a href="./addPage.cfm" class="btn addButton">&plus; Add New Page</a></div>
                     </div>
                     <div class="pageContainer">
                         <div id="accordion" class="accordion">
-                            <cfif structKeyExists(session, 'username')>
+                            <cfif structKeyExists(session,'username')>
                                 <cfset local.obj = new Component.question28()>
                                 <cfset local.result = local.obj.displayPages()>
-                                <cfloop query="#local.result#">
-                                    <h6 class="headSection">Page Id = #local.result.pageid#<i class="fa-solid fa-chevron-down fade1 fa-xs"></i></h6>
-                                    <div class="pageData py-3">
-                                        <div class="ms-2 mb-2">#local.result.pagename#</div>
-                                        <p class="pagedesc ms-2">
-                                            #local.result.pagedesc#
-                                        </p>
+                                <cfloop query="#result#">
+                                    <div class="headSection d-flex px-2 justify-content-between">
+                                        <h6>Page Id : #result.pageid#
+                                            <i class="fa-solid fa-chevron-down fade1 fa-xs"></i>
+                                        </h6>                                        
                                         <div>
-                                            <button value="<!--- #local.result.pageid# --->" type="submit" name="updatePage" class="btn btn-success">Update</button>
-                                            <button value="#local.result.pageid#" type="submit" name="deletePage" class="btn btn-danger">Delete</button>
+                                            <div>Page Created On : #result._createdOn#</div>
+                                        </div>
+                                    </div>
+                                    <div class="pageData py-3">
+                                        <div class="ms-3 mb-2">#result.pagename#</div>
+                                        <p class="pagedesc ms-3">
+                                            #result.pagedesc#
+                                        </p>
+                                        <div class="mx-2">
+                                            <div>
+                                                <button value="#result.pageid#"  type="submit" name="updatePage" class="updateButton btn  ">Update</button>
+                                                <button value="#result.pageid#"  type="button" onclick="deletePage(this)" class=" deleteButton btn">Delete</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </cfloop>
@@ -48,12 +60,8 @@
                     <cflocation  url="./index.cfm">
                 </cfif>
                 <cfif structKeyExists(form, "updatePage")>
-                    <cfset local.object = new Component.question28()>
+                    <cfset session.editPageId = "#form.updatePage#">
                     <cflocation  url="./editPage.cfm">
-                </cfif>
-                <cfif structKeyExists(form, "deletePage")>
-                    <cfset local.object = new Component.question28()>
-                    <cfset local.result = local.object.deletePage(form.deletePage)>
                 </cfif>
             </cfoutput>
             <script src="./script.js"></script>
