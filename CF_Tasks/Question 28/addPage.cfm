@@ -1,4 +1,3 @@
-<cfapplication name = "applicationName" sessionmanagement = "Yes">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +8,11 @@
     <link rel="stylesheet" href="./Style/style.css">
 </head>
 <body>
-    <form method = "POST">
-        <div class="text-center ms-3 mt-4">
+    <cfif session.role EQ "User">
+        <cflocation  url="./index.cfm">
+    </cfif>
+    <form method = "POST" class="d-flex justify-content-center mt-5">
+        <div class="text-center ms-3 mt-4 w-50">
             <div class="text-center p-3 border border-success rounded me-3 adminLogin addbackGround">
                 <h4>Page Creation</h4>
                 <input id="pageName" required name="pageName" placeholder="Enter page name" type="text" class="form-control border border-success mt-3">
@@ -21,8 +23,12 @@
     </form>
     <cfif structKeyExists(form, "validateSign")>
         <cfset local.object = new Component.question28()>
-        <cfset result = local.object.addPage(form.pagename,form.pageDesc)>
-        <cflocation  url="./adminPage.cfm">
+        <cfset local.result = local.object.addPage(form.pagename,form.pageDesc)>
+        <cfif local.result EQ 1>
+            <div class="warning text-center" id="warning">Page Name already exists</div>
+            <cfelse>
+               <cflocation  url="./adminPage.cfm">
+        </cfif>
     </cfif> 
 </body>
 </html>

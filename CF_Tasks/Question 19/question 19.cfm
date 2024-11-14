@@ -16,7 +16,9 @@
                 </form>
                 <cfset local.obj  =  new Component.question19()>
                 <cfset local.result  =  local.obj.sendCookie()>
-                #local.result#
+                    <div class="text-center mt-5 fs-2 fw-bold text-success">
+                        #local.result#
+                    </div>
             </cfoutput>
         </body>
     </html>

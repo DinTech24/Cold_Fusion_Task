@@ -10,7 +10,6 @@
         <cfargument  name="userName">
         <cfargument  name="emailAddress">
         <cfargument  name="phoneNumber">
-        <cfdump  var="name">
         <cfset local.totalSalary = arguments.salary + (arguments.salaryCent/100)>
         <cfquery datasource="myData" name="query">
             insert into UserData values('#arguments.userName#',

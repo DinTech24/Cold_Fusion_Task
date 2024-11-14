@@ -1,6 +1,6 @@
 <cfoutput>
     <cfset local.obj1  =  createObject("component","Component.question15")>
-    <cfset local.result1  =  obj1.multiply(1,2)>
+    <cfset local.result1  =  local.obj1.multiply(1,2)>
     <cfobject name = "obj2" type = "component" component = "Component.question15">
     <cfset local.result2  =  obj2.multiply(1,2,3)>
     <cfinvoke  method = "multiply" component = "Component.question15" returnvariable = "valueInvoke">

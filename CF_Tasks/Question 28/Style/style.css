@@ -14,7 +14,12 @@ body{
 }
 
 .adminLogin{
-    background-color: #d5fce6;
+    background-color: #406f85;
+    box-shadow: 2px 1px 3px black;
+}
+
+.accessButton{
+    background-color: #78a5ca;
 }
 
 .helloUser{
@@ -34,7 +39,8 @@ body{
 }
 
 .userHead{
-    background-color: #5e0000;
+    background-color: #406f85;
+    box-shadow: 1px 1px 1px;
 }
 
 .userDataHead{
@@ -42,8 +48,33 @@ body{
 
 }
 
+.addButton{
+    color: #406f85 !important;
+    border: 2px solid #406f85 !important;
+    border-radius: 10px !important;
+    box-shadow: 1px 1px 1px !important;
+}
+
+.userLogout{
+    background-color: #c00020 !important;
+    color: white !important;
+    box-shadow: 1px 1px 1px black;
+}
+
+.updateButton{
+    background-color: #016342 !important;
+    color: white !important;
+    border-radius: 10px !important;
+}
+
+.deleteButton{
+    background-color: #d33b54 !important;
+    color: white !important;
+    border-radius: 10px !important;
+}
+
 .pageData{
-    background-color: #ffd8d8;
+    background-color: #95b5c4;
     border-bottom: 1px solid grey;
 }
 
@@ -58,5 +89,9 @@ body{
 }
 
 .addbackGround{
-    background-color: #cfffc9;
+    background-color: #73a3b9;
+}
+
+.headSection{
+    border-bottom: 1px solid grey;
 }

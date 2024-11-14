@@ -12,8 +12,8 @@
         <h4 class="fw-bold mx-auto">Rating</h4>
         <form action="" method="POST">
             <div class="d-flex flex-column mt-3">
-                <input name = "number" placeholder="Enter number" class = "form-control border border-primary">
-                <input type = "submit" value = "Submit" class = "btn btn-primary my-auto mt-3">
+                <input required name = "number" placeholder="Enter number" class = "form-control border border-primary">
+                <input required type = "submit" value = "Submit" class = "btn btn-primary my-auto mt-3">
             </div>
         </form>
         <cfif structKeyExists(form, "number")>
